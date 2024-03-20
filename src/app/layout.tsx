@@ -26,7 +26,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
+  const imgbg = require('@/assets/images/wallpaper.jpg');
+  console.log(imgbg);
+  
   useEffect(() => {
     Aos.init({});
   }, []);
@@ -36,7 +38,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <div className="bg-solar-blue-light flex flex-col min-h-screen">
           <Header />
-          <div className="flex-grow bg-tv-image bg-cover">{children}</div>
+          <div className="flex-grow bg-cover" style={{ backgroundImage: "url('/apptv/images/wallpaper.jpg')"}}>{children}</div>
           <Footer />
         </div>
       </body>
