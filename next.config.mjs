@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // basePath: '/apptv',
-  // assetPrefix: '/apptv',
+  basePath: '/apptv',
+  assetPrefix: '/apptv',
   webpack(config, { isServer }) {
     if (!isServer) {
       config.resolve.fallback = {
