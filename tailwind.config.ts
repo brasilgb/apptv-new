@@ -18,7 +18,7 @@ const config: Config = {
         Roboto: ['var(--font-roboto)'],
       },
       backgroundImage: {
-        'tvimage': "url('images/wallpaper.jpg')"
+        'bg-image': "url('images/wallpaper.jpg')"
       },
     },
   },
