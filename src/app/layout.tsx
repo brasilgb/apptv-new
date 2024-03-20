@@ -34,7 +34,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <div className="bg-solar-blue-light flex flex-col min-h-screen">
           <Header />
-          <div className={`flex-grow  bg-cover`} style={{ backgroundImage: "url('images/wallpaper.jpg')" }}>{children}</div>
+          <div className={`flex-grow bg-tvimage bg-cover`} >{children}</div>
           <Footer />
         </div>
       </body>
