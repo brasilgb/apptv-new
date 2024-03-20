@@ -17,9 +17,9 @@ const config: Config = {
       fontFamily: {
         Roboto: ['var(--font-roboto)'],
       },
-      // backgroundImage: {
-      //   'tv-image': "url('/images/wallpaper.jpg')"
-      // },
+      backgroundImage: {
+        'tv-image': "url('/apptv/images/wallpaper.jpg')"
+      },
     },
   },
   plugins: [],
