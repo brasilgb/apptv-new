@@ -1,0 +1,25 @@
+[
+  {
+    "Atualizacao": "20/03/2024 11:07:29",
+    "Dia": "20",
+    "Mes": "mar",
+    "Ano": "2024",
+    "MetaDia": "479226",
+    "MetaAlcancadaDia": "0.31",
+    "VendaDia": "150489.70",
+    "PerformanceDia": "0.31",
+    "DiferencaDia": "-328736.11",
+    "MetaMes": "12000000",
+    "VendaAlcancadaMes": "0.54",
+    "MetaAlcancadaMes": "0.80",
+    "VendaMes": "6498819.63",
+    "PerformanceMes": "0.54",
+    "MetaAcumuladaMes": "0.68",
+    "DiferencaMes": "-5501180.37",
+    "MetaAcumuladaAno": "38000000",
+    "VendaAlcancadaAno": "0.73",
+    "VendaAno": "27573198.86",
+    "PerformanceAno": "0.73",
+    "DiferencaAno": "-10426801.14"
+  }
+]

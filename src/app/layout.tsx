@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect } from 'react';
+import { url } from "inspector";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -33,7 +34,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <div className="bg-solar-blue-light flex flex-col min-h-screen">
           <Header />
-          <div className="flex-grow bg-bg-image bg-cover">{children}</div>
+          <div className={`flex-grow  bg-cover`} style={{ backgroundImage: "url('images/wallpaper.jpg')" }}>{children}</div>
           <Footer />
         </div>
       </body>

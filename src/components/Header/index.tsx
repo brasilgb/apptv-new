@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import NavBarLink from '../NavBarLink';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
+import Image from "next/image";
 
 const Header = () => {
   const pathname = usePathname();
@@ -29,7 +30,7 @@ const Header = () => {
       <div className="container m-auto flex items-center justify-between h-14">
         <div className="w-28">
           <Link href="/">
-            <img src="logo/logo_solar.png" alt="" />
+            <Image src={require('@/assets/logo/logo_solar.png')} width="100" height="40" alt="" />
           </Link>
         </div>
         <ul className="flex-1 ml-4 gap-4 flex items-center justify-start">
