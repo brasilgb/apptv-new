@@ -30,7 +30,7 @@ const Header = () => {
       <div className="container m-auto flex items-center justify-between h-14">
         <div className="w-28">
           <Link href="/">
-            <Image src="logo/logo_solar.png" width="100" height="40" alt="" />
+            <Image src="/logo/logo_solar.png" width="100" height="40" alt="" />
           </Link>
         </div>
         <ul className="flex-1 ml-4 gap-4 flex items-center justify-start">

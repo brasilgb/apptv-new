@@ -26,15 +26,17 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
   useEffect(() => {
     Aos.init({});
   }, []);
+
   return (
     <html lang="en">
       <body className={roboto.className}>
         <div className="bg-solar-blue-light flex flex-col min-h-screen">
           <Header />
-          <div className={`flex-grow bg-tvimage bg-cover`} >{children}</div>
+          <div className="flex-grow bg-tv-image bg-cover">{children}</div>
           <Footer />
         </div>
       </body>
