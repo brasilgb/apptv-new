@@ -23,7 +23,7 @@ const Header = () => {
           };
       }, 15000);
       return () => clearTimeout(timeout);
-  }, [pathname])
+  }, [pathname,router])
 
   return (
     <div className="border-b border-b-white">
