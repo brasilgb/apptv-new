@@ -1,13 +1,13 @@
 import React from 'react';
-import { getDataFaturamento, getDataGrafico } from '../apiData';
 import Section from '@/components/Section';
 import TitleSection from '@/components/TitleSection';
 import Connectors from '@/components/Connectors';
 import BarChart from '@/components/Charts/BarChart';
+import { getDataEvolucao, getDataFaturamento } from "@/lib/apitv";
 
 const Evolucao = async () => {
   const faturamentos = await getDataFaturamento();
-  const grafico = await getDataGrafico();
+  const grafico = await getDataEvolucao();
 
   return (
     <main

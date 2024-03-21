@@ -9,6 +9,8 @@ interface dataProgress {
   colorBar: string;
   colorText: string;
   height: number;
+  sizeValue?: string;
+  sizeTitle?: string;
 }
 
 const PieChart = (props: dataProgress) => {
@@ -29,7 +31,7 @@ const PieChart = (props: dataProgress) => {
       text: '',
     },
     subtitle: {
-      text: `<div style='font-size: 25px; font-weight: bold; color: ${props.colorText}'>${props.value.replace('.', ',')}%</div> <span style='font-size: 15px; font-weight: bold;'>${props.title}</span>`,
+      text: `<div style='font-size: ${props.sizeValue ? props.sizeValue : '25px'}; font-weight: bold; color: ${props.colorText}'>${props.value.replace('.', ',')}%</div> <span style='font-size: ${props.sizeTitle ? props.sizeTitle : '15px'}; font-weight: bold;'>${props.title}</span>`,
       align: 'center',
       verticalAlign: 'middle',
       style: {

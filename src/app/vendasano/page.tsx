@@ -3,8 +3,8 @@ import Connectors from '@/components/Connectors';
 import Kpis from '@/components/Kpis';
 import TitleSection from '@/components/TitleSection';
 import React from 'react';
-import { getDataFaturamento } from '../apiData';
 import Section from '@/components/Section';
+import { getDataFaturamento } from "@/lib/apitv";
 
 const VendasAno = async () => {
   const faturamentos = await getDataFaturamento();
@@ -63,6 +63,8 @@ const VendasAno = async () => {
             colorBar="#019EE3"
             colorText="#706f6f"
             height={565}
+            sizeValue="100px"
+            sizeTitle="30px"
           />
         </div>
       </Section>

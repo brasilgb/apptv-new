@@ -1,9 +1,10 @@
 'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import NavBarLink from '../NavBarLink';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from "next/image";
+import Profile from "../profile";
 
 const Header = () => {
   const pathname = usePathname();
@@ -40,10 +41,11 @@ const Header = () => {
           <NavBarLink label="Vendas ano" url="/vendasano" />
           <NavBarLink label="Evolução do Mês" url="/evolucao" />
         </ul>
-        <div className="border-2 border-solar-green-light rounded px-4 py-1">
+        <div className="border-2 border-solar-green-light rounded pl-4 py-1 flex">
           <p className="text-base font-medium text-solar-gray-light drop-shadow">
             Acompanhamento de Vendas
           </p>
+          <Profile />
         </div>
       </div>
     </div>

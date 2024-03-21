@@ -1,4 +1,5 @@
-import { getDataFaturamento } from './apiData';
+import { getDataFaturamento } from "@/lib/apitv";
+import moment from "moment";
 
 const Home = async () => {
   const faturamento = await getDataFaturamento();
@@ -20,7 +21,7 @@ const Home = async () => {
             </h1>
             <h1 className="bg-gradient-to-b from-gray-50 via-gray-100 to-gray-white inline-block text-transparent bg-clip-text mt-2 text-lg font-medium text-white drop-shadow-lg">
               <span className="mr-2">Atualização de dados: </span>{' '}
-              {faturamento[0].Atualizacao}
+              {moment(faturamento[0].Atualizacao).format("DD/MM/YYYY HH:mm:ss")}
             </h1>
           </div>
         </div>

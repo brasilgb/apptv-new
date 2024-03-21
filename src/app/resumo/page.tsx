@@ -1,15 +1,15 @@
 import React from 'react';
-import { getDataFaturamento, getDataGrafico } from '../apiData';
 import Kpis from '@/components/Kpis';
 import PieChart from '@/components/Charts/PieChart';
 import BarChart from '@/components/Charts/BarChart';
 import Connectors from '@/components/Connectors';
 import TitleSection from '@/components/TitleSection';
 import Section from '@/components/Section';
+import { getDataEvolucao, getDataFaturamento } from "@/lib/apitv";
 
 const Resumo = async () => {
   const faturamentos = await getDataFaturamento();
-  const grafico = await getDataGrafico();
+  const grafico = await getDataEvolucao();
 
   return (
     <main
@@ -47,9 +47,9 @@ const Resumo = async () => {
           <div className="">
             <PieChart
               title={'Performance'}
-              value={faturamentos[0].PerformanceDia}
+              value={`${(faturamentos[0].PerformanceDia * 100)}`}
               colorBar="#019EE3"
-              colorText="#000"
+              colorText="#706f6f"
               height={250}
             />
           </div>
@@ -83,18 +83,18 @@ const Resumo = async () => {
             <div className="w-1/2">
               <PieChart
                 title={'Vendas'}
-                value={(faturamentos[0]?.PerformanceMes * 100).toFixed()}
+                value={`${(faturamentos[0]?.PerformanceMes * 100).toFixed()}`}
                 colorBar="#019EE3"
-                colorText="#000"
+                colorText="#706f6f"
                 height={250}
               />
             </div>
             <div className="w-1/2">
               <PieChart
                 title={'Meta Acum.'}
-                value={(faturamentos[0]?.MetaAcumuladaMes * 100).toFixed()}
+                value={`${(faturamentos[0]?.MetaAcumuladaMes * 100)}`}
                 colorBar="#019EE3"
-                colorText="#000"
+                colorText="#706f6f"
                 height={250}
               />
             </div>
@@ -128,9 +128,9 @@ const Resumo = async () => {
           <div className="">
             <PieChart
               title={'Performance'}
-              value={(faturamentos[0]?.PerformanceAno * 100).toFixed()}
+              value={`${(faturamentos[0]?.PerformanceAno * 100)}`}
               colorBar="#019EE3"
-              colorText="#202020"
+              colorText="#706f6f"
               height={250}
             />
           </div>

@@ -3,8 +3,8 @@ import Connectors from '@/components/Connectors';
 import Kpis from '@/components/Kpis';
 import TitleSection from '@/components/TitleSection';
 import React from 'react';
-import { getDataFaturamento } from '../apiData';
 import Section from '@/components/Section';
+import { getDataFaturamento } from "@/lib/apitv";
 
 const VendasMes = async () => {
   const faturamentos = await getDataFaturamento();
@@ -63,8 +63,10 @@ const VendasMes = async () => {
                 title={'Vendas'}
                 value={(faturamentos[0]?.PerformanceMes * 100).toFixed()}
                 colorBar="#019EE3"
-                colorText="#000"
+                colorText="#706f6f"
                 height={565}
+                sizeValue="100px"
+                sizeTitle="30px"
               />
             </div>
             <div className="w-1/2">
@@ -72,8 +74,10 @@ const VendasMes = async () => {
                 title={'Meta Acum.'}
                 value={(faturamentos[0]?.MetaAcumuladaMes * 100).toFixed()}
                 colorBar="#019EE3"
-                colorText="#000"
+                colorText="#706f6f"
                 height={565}
+                sizeValue="100px"
+                sizeTitle="30px"
               />
             </div>
           </div>
