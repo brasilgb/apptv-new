@@ -49,7 +49,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
           <div className="">
             <PieChart
               title={'Performance'}
-              value={`${(faturamentos[0].PerformanceDia * 100)}`}
+              value={`${(faturamentos[0].PerformanceDia * 100).toFixed()}`}
               colorBar={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
               colorText={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
               height={250}
