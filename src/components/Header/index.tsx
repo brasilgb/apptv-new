@@ -11,20 +11,20 @@ const Header = () => {
   const router = useRouter();
 
   useEffect(() => {
-      console.log(pathname);
-      const timeout = setTimeout(() => {
-          switch (pathname) {
-              case '/': return router.push("/resumo");
-              case '/resumo': return router.push("/vendasdia");
-              case '/vendasdia': return router.push("/vendasmes");
-              case '/vendasmes': return router.push("/vendasano");
-              case '/vendasano': return router.push("/evolucao");
-              case '/evolucao': return router.push("/");
-              default: return false;
-          };
-      }, 15000);
-      return () => clearTimeout(timeout);
-  }, [pathname,router])
+    console.log(pathname);
+    const timeout = setTimeout(() => {
+      switch (pathname) {
+        case '/': return router.push("/resumo");
+        case '/resumo': return router.push("/vendasdia");
+        case '/vendasdia': return router.push("/vendasmes");
+        case '/vendasmes': return router.push("/vendasano");
+        case '/vendasano': return router.push("/evolucao");
+        case '/evolucao': return router.push("/");
+        default: return false;
+      };
+    }, 15000);
+    return () => clearTimeout(timeout);
+  }, [pathname, router]);
 
   return (
     <div className="border-b border-b-white">

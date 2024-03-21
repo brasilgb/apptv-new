@@ -6,10 +6,12 @@ import Connectors from '@/components/Connectors';
 import TitleSection from '@/components/TitleSection';
 import Section from '@/components/Section';
 import { getDataEvolucao, getDataFaturamento } from "@/lib/apitv";
+import { colorKpi, colorProgress } from "@/utils/dataColors";
 
 const Resumo = async () => {
   const faturamentos = await getDataFaturamento();
   const grafico = await getDataEvolucao();
+console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
 
   return (
     <main
@@ -28,19 +30,19 @@ const Resumo = async () => {
               title="Meta"
               value={faturamentos[0]?.MetaDia}
               tcolor="text-gray-500"
-              vcolor="text-blue-500"
+              vcolor="#019EE3"
             />
             <Kpis
               title="Vendas"
               value={faturamentos[0]?.VendaDia}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
             />
             <Kpis
               title="Falta Vender"
               value={faturamentos[0]?.DiferencaDia}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
             />
           </div>
           <Connectors />
@@ -48,8 +50,8 @@ const Resumo = async () => {
             <PieChart
               title={'Performance'}
               value={`${(faturamentos[0].PerformanceDia * 100)}`}
-              colorBar="#019EE3"
-              colorText="#706f6f"
+              colorBar={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
+              colorText={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
               height={250}
             />
           </div>
@@ -63,19 +65,19 @@ const Resumo = async () => {
               title="Meta"
               value={faturamentos[0]?.MetaMes}
               tcolor="text-gray-500"
-              vcolor="text-blue-500"
+              vcolor="#019EE3"
             />
             <Kpis
               title="Vendas"
               value={faturamentos[0]?.VendaMes}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
             />
             <Kpis
               title="Falta Vender"
               value={faturamentos[0]?.DiferencaMes}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
             />
           </div>
           <Connectors />
@@ -84,8 +86,8 @@ const Resumo = async () => {
               <PieChart
                 title={'Vendas'}
                 value={`${(faturamentos[0]?.PerformanceMes * 100).toFixed()}`}
-                colorBar="#019EE3"
-                colorText="#706f6f"
+                colorBar={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
+                colorText={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
                 height={250}
               />
             </div>
@@ -93,8 +95,8 @@ const Resumo = async () => {
               <PieChart
                 title={'Meta Acum.'}
                 value={`${(faturamentos[0]?.MetaAcumuladaMes * 100)}`}
-                colorBar="#019EE3"
-                colorText="#706f6f"
+                colorBar={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
+                colorText={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
                 height={250}
               />
             </div>
@@ -109,19 +111,19 @@ const Resumo = async () => {
               title="Meta"
               value={faturamentos[0]?.MetaAcumuladaAno}
               tcolor="text-gray-500"
-              vcolor="text-blue-500"
+              vcolor="#019EE3"
             />
             <Kpis
               title="Vendas"
               value={faturamentos[0]?.VendaAno}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
             />
             <Kpis
               title="Falta Vender"
               value={faturamentos[0]?.DiferencaAno}
               tcolor="text-gray-500"
-              vcolor="text-red-500"
+              vcolor={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
             />
           </div>
           <Connectors />
@@ -129,8 +131,8 @@ const Resumo = async () => {
             <PieChart
               title={'Performance'}
               value={`${(faturamentos[0]?.PerformanceAno * 100)}`}
-              colorBar="#019EE3"
-              colorText="#706f6f"
+              colorBar={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
+              colorText={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
               height={250}
             />
           </div>

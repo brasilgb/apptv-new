@@ -6,8 +6,8 @@ import HighchartsReact from 'highcharts-react-official';
 interface dataProgress {
   title: string;
   value: string;
-  colorBar: string;
-  colorText: string;
+  colorBar: any;
+  colorText: any;
   height: number;
   sizeValue?: string;
   sizeTitle?: string;

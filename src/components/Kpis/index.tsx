@@ -5,7 +5,7 @@ interface KpisProps {
   title?: string;
   value: string;
   tcolor?: string;
-  vcolor?: string;
+  vcolor?: any;
   tsize?: string;
   vsize?: string;
   kstyles?: string;
@@ -25,7 +25,8 @@ const Kpis = (props: KpisProps) => {
       </div>
       <hr className="border-gray-200" />
       <div
-        className={`${props.vsize ? props.vsize : 'text-[1.2rem]'} text-center font-extrabold  ${props.vstyles ? props.vstyles : 'p-2'} ${props.vcolor} drop-shadow-lg`}
+        className={`${props.vsize ? props.vsize : 'text-[1.2rem]'} text-center font-extrabold  ${props.vstyles ? props.vstyles : 'p-2 '} drop-shadow-lg`}
+      style={{color: props.vcolor}}
       >
         {formatMoeda(props.value)}
       </div>

@@ -5,6 +5,7 @@ import TitleSection from '@/components/TitleSection';
 import React from 'react';
 import Section from '@/components/Section';
 import { getDataFaturamento } from "@/lib/apitv";
+import { colorProgress } from "@/utils/dataColors";
 
 const VendasAno = async () => {
   const faturamentos = await getDataFaturamento();
@@ -32,7 +33,7 @@ const VendasAno = async () => {
             tsize="text-3xl"
             vsize="text-6xl"
             tcolor="text-gray-500"
-            vcolor="text-blue-500"
+            vcolor="#019EE3"
           />
           <Kpis
             title="Vendas"
@@ -42,7 +43,7 @@ const VendasAno = async () => {
             tsize="text-3xl"
             vsize="text-6xl"
             tcolor="text-gray-500"
-            vcolor="text-red-500"
+            vcolor={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
           />
           <Kpis
             title="Falta Vender"
@@ -52,7 +53,7 @@ const VendasAno = async () => {
             tsize="text-3xl"
             vsize="text-6xl"
             tcolor="text-gray-500"
-            vcolor="text-red-500"
+            vcolor={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
           />
         </div>
         <Connectors size="h-6 w-8" />
@@ -60,8 +61,8 @@ const VendasAno = async () => {
           <PieChart
             title={'Performance'}
             value={(faturamentos[0]?.PerformanceAno * 100).toFixed()}
-            colorBar="#019EE3"
-            colorText="#706f6f"
+            colorBar={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
+            colorText={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
             height={565}
             sizeValue="100px"
             sizeTitle="30px"
