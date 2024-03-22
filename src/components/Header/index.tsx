@@ -1,17 +1,19 @@
 'use client';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import NavBarLink from '../NavBarLink';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
 import Image from "next/image";
 import Profile from "../profile";
+import { useAuthContext } from "@/contexts/AuthContext";
+import { IoHome, IoHomeOutline } from "react-icons/io5";
 
 const Header = () => {
+  const { user } = useAuthContext();
   const pathname = usePathname();
   const router = useRouter();
 
   useEffect(() => {
-    console.log(pathname);
     const timeout = setTimeout(() => {
       switch (pathname) {
         case '/': return router.push("/resumo");
@@ -25,6 +27,8 @@ const Header = () => {
     }, 15000);
     return () => clearTimeout(timeout);
   }, [pathname, router]);
+  
+  const linkPortal = user?.folders?.length;
 
   return (
     <div className="border-b border-b-white">
@@ -35,6 +39,15 @@ const Header = () => {
           </Link>
         </div>
         <ul className="flex-1 ml-4 gap-4 flex items-center justify-start">
+          {linkPortal > 1 &&
+            <Link
+              className="flex flex-col items-center justify-center bg-solar-blue-dark border border-x-solar-gray-light p-1.5 rounded text-solar-gray-light shadow"
+              title="Retornar ao Portal"
+              href="http://portal.gruposolar.com.br/"
+            >
+              <IoHome size={22} />
+            </Link>
+          }
           <NavBarLink label="Acompanhamento" url="/resumo" />
           <NavBarLink label="Vendas dia" url="/vendasdia" />
           <NavBarLink label="Vendas mês" url="/vendasmes" />
