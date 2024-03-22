@@ -52,7 +52,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
               value={`${(faturamentos[0].PerformanceDia * 100).toFixed()}`}
               colorBar={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
               colorText={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
-              height={250}
+              height={246}
             />
           </div>
         </Section>
@@ -88,7 +88,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
                 value={`${(faturamentos[0]?.PerformanceMes * 100).toFixed()}`}
                 colorBar={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
                 colorText={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
-                height={250}
+                height={246}
               />
             </div>
             <div className="w-1/2">
@@ -97,7 +97,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
                 value={`${(faturamentos[0]?.MetaAcumuladaMes * 100)}`}
                 colorBar={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
                 colorText={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
-                height={250}
+                height={246}
               />
             </div>
           </div>
@@ -133,7 +133,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
               value={`${(faturamentos[0]?.PerformanceAno * 100)}`}
               colorBar={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
               colorText={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
-              height={250}
+              height={246}
             />
           </div>
         </Section>
@@ -143,7 +143,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
         <TitleSection title={`Evolução do mês: ${faturamentos[0].Mes}`} />
         <Connectors />
         <div className="bg-white rounded-b-md p-1">
-          <BarChart grafico={grafico} altura={520} />
+          <BarChart grafico={grafico} altura={516} />
         </div>
       </Section>
     </main>

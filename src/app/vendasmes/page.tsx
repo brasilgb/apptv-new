@@ -65,7 +65,7 @@ const VendasMes = async () => {
                 value={(faturamentos[0]?.PerformanceMes * 100).toFixed()}
                 colorBar={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
                 colorText={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
-                height={565}
+                height={561}
                 sizeValue="100px"
                 sizeTitle="30px"
               />
@@ -76,7 +76,7 @@ const VendasMes = async () => {
                 value={(faturamentos[0]?.MetaAcumuladaMes * 100).toFixed()}
                 colorBar={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100).toFixed())}
                 colorText={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100).toFixed())}
-                height={565}
+                height={561}
                 sizeValue="100px"
                 sizeTitle="30px"
               />

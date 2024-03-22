@@ -24,7 +24,7 @@ const Evolucao = async () => {
         />
         <Connectors size="h-6 w-8" />
         <div className="bg-white rounded-b-md p-1">
-          <BarChart grafico={grafico} altura={862} />
+          <BarChart grafico={grafico} altura={858} />
         </div>
       </Section>
     </main>
