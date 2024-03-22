@@ -34,6 +34,7 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <title>Acompanhamento de Vendas - Portal Grupo Solar</title>
+        <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className={roboto.className}>
         <div className="bg-solar-blue-light flex flex-col min-h-screen">
