@@ -63,7 +63,7 @@ const VendasAno = async () => {
             value={(faturamentos[0]?.PerformanceAno * 100).toFixed()}
             colorBar={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
             colorText={colorProgress((faturamentos[0]?.PerformanceAno * 100).toFixed())}
-            height={556}
+            height={545}
             sizeValue="100px"
             sizeTitle="30px"
           />

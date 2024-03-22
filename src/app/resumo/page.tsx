@@ -11,7 +11,6 @@ import { colorKpi, colorProgress } from "@/utils/dataColors";
 const Resumo = async () => {
   const faturamentos = await getDataFaturamento();
   const grafico = await getDataEvolucao();
-console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
 
   return (
     <main
@@ -143,7 +142,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
         <TitleSection title={`Evolução do mês: ${faturamentos[0].Mes}`} />
         <Connectors />
         <div className="bg-white rounded-b-md p-1">
-          <BarChart grafico={grafico} altura={516} />
+          <BarChart grafico={grafico} altura={510} />
         </div>
       </Section>
     </main>

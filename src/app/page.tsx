@@ -8,7 +8,7 @@ const Home = async () => {
       data-aos="fade-right"
       data-aos-offset="300"
       data-aos-easing="ease-in-sine"
-      className="h-[92.4vh] flex items-center justify-center"
+      className="fixed bottom-[1.55rem] top-[3.55rem] right-0 left-0 flex items-center justify-center"
     >
       <div className="flex w-full h-full">
         <div className="flex-1 h-[full] bg-solar-blue-dark bg-opacity-80 flex items-center justify-center rounded-r-full border-r-2 border-r-solar-blue-dark">
