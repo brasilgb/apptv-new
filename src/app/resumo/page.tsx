@@ -52,7 +52,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
               value={`${(faturamentos[0].PerformanceDia * 100).toFixed()}`}
               colorBar={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
               colorText={colorProgress(faturamentos[0]?.PerformanceDia * 100) }
-              height={246}
+              height={240}
             />
           </div>
         </Section>
@@ -88,7 +88,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
                 value={`${(faturamentos[0]?.PerformanceMes * 100).toFixed()}`}
                 colorBar={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
                 colorText={colorProgress((faturamentos[0]?.PerformanceMes * 100).toFixed())}
-                height={246}
+                height={240}
               />
             </div>
             <div className="w-1/2">
@@ -97,7 +97,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
                 value={`${(faturamentos[0]?.MetaAcumuladaMes * 100)}`}
                 colorBar={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
                 colorText={colorProgress((faturamentos[0]?.MetaAcumuladaMes * 100))}
-                height={246}
+                height={240}
               />
             </div>
           </div>
@@ -133,7 +133,7 @@ console.log(colorKpi(faturamentos[0]?.PerformanceDia * 100));
               value={`${(faturamentos[0]?.PerformanceAno * 100)}`}
               colorBar={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
               colorText={colorProgress(faturamentos[0]?.PerformanceAno * 100)}
-              height={246}
+              height={240}
             />
           </div>
         </Section>
