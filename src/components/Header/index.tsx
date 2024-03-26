@@ -41,6 +41,7 @@ const Header = () => {
         <ul className="flex-1 ml-4 gap-4 flex items-center justify-start">
           {linkPortal > 1 &&
             <Link
+
               className="flex flex-col items-center justify-center bg-solar-blue-dark border border-x-solar-gray-light p-1.5 rounded text-solar-gray-light shadow"
               title="Retornar ao Portal"
               href="http://portal.gruposolar.com.br/"

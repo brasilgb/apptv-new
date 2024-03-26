@@ -1,4 +1,5 @@
 "use client";
+import { getDataBgImage } from "@/lib/apitv";
 import { useRouter } from "next/navigation";
 import React, { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
 
@@ -9,6 +10,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState<any>(null);
+  const [updateImg, setUpdateImg] = useState<string>("");
 
   useEffect(() => {
       const loadStorage = async () => {
@@ -26,13 +28,23 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
     router.push('http://portal.gruposolar.com.br/login');
   }
 
+  useEffect(() => {
+    const getImageBg = async () => {
+      const dataImage = await getDataBgImage();
+      setUpdateImg(dataImage.appImage[0]?.bgimage);
+    };
+    getImageBg();
+  }, [setUpdateImg]);
+
   return (
     <AuthContext.Provider value={{
       authenticated: !!user,
       user,
       signOut,
       loading,
-      setLoading
+      setLoading,
+      setUpdateImg,
+      updateImg
     }}>
       {children}
     </AuthContext.Provider>

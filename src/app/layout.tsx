@@ -5,11 +5,13 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import Aos from 'aos';
 import 'aos/dist/aos.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { usePathname } from "next/navigation";
 import { checkIsPublicRoute } from "@/functions/check-is-public-route";
 import { AuthProvider } from "@/contexts/AuthContext";
 import PrivateRoute from "@/components/privateroute";
+import { getDataBgImage } from "@/lib/apitv";
+import { url } from "inspector";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -23,12 +25,21 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const [bgImage, setBgImage] = useState("");
   const pathname = usePathname();
   const isPublicPage = checkIsPublicRoute(pathname!);
 
   useEffect(() => {
     Aos.init({});
   }, []);
+
+  useEffect(() => {
+    const getImageBg = async () => {
+      const dataImage = await getDataBgImage();
+      setBgImage(dataImage.appImage[0]?.bgimage);
+    };
+    getImageBg();
+  }, [bgImage]);
 
   return (
     <html lang="en">
@@ -41,11 +52,11 @@ export default function RootLayout({
           <AuthProvider>
             {isPublicPage && children}
             {!isPublicPage && (
-          <PrivateRoute>
-          <Header />
-          <div className="flex-grow bg-tv-image bg-cover">{children}</div>
-          <Footer />
-          </PrivateRoute>
+              <PrivateRoute>
+                <Header />
+                <div className="flex-grow bg-cover" style={{ backgroundImage: `url("http://api.gruposolar.com.br:8085/images/${bgImage}")` }}>{children}</div>
+                <Footer />
+              </PrivateRoute>
             )}
           </AuthProvider>
         </div>

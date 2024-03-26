@@ -1,7 +1,8 @@
 'use client'
 import { useAuthContext } from "@/contexts/AuthContext";
+import Link from "next/link";
 import { useState } from "react";
-import { IoExit, IoPerson } from 'react-icons/io5';
+import { IoExit, IoImage, IoPerson } from 'react-icons/io5';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const Profile = () => {
@@ -37,6 +38,14 @@ const Profile = () => {
                         <span className="ml-1">{user?.userName}</span>
                     </span>
                     <span className="w-full border-b border-gray-200"></span>
+                    <Link
+                        className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
+                        href="/imgapp"
+                        onClick={toggle}
+                    >
+                        <IoImage color="#6d6a6a" size={20} />
+                        <span className="ml-1">Wallpaper</span>
+                    </Link>
                     <button
                         className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
                         onClick={signOut}

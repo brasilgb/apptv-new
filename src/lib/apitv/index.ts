@@ -7,7 +7,7 @@ export async function getDataFaturamento() {
         throw new Error('Failed to fetch data')
     }
     const faturamento = res.json();
-    
+
     return faturamento;
 }
 
@@ -20,6 +20,19 @@ export async function getDataEvolucao() {
         throw new Error('Failed to fetch data')
     }
     const evolucao = res.json()
-    
+
+    return evolucao;
+}
+
+export async function getDataBgImage() {
+    const res = await fetch('http://api.gruposolar.com.br:8085/api/getbgimage', {
+        cache: 'no-store',
+    })
+    if (!res.ok) {
+        // This will activate the closest `error.js` Error Boundary
+        throw new Error('Failed to fetch data')
+    }
+    const evolucao = res.json()
+
     return evolucao;
 }
