@@ -11,7 +11,6 @@ import { checkIsPublicRoute } from "@/functions/check-is-public-route";
 import { AuthProvider } from "@/contexts/AuthContext";
 import PrivateRoute from "@/components/privateroute";
 import { getDataBgImage } from "@/lib/apitv";
-import { url } from "inspector";
 
 const roboto = Roboto({
   subsets: ['latin'],
