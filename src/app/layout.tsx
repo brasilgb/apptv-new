@@ -53,7 +53,7 @@ export default function RootLayout({
             {!isPublicPage && (
               <PrivateRoute>
                 <Header />
-                <div className="flex-grow bg-cover" style={{ backgroundImage: `url("http://api.gruposolar.com.br:8085/images/${bgImage}")` }}>{children}</div>
+                <div className="flex-grow bg-cover bg-tv-image">{children}</div>
                 <Footer />
               </PrivateRoute>
             )}

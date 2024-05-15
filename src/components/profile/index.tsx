@@ -29,7 +29,7 @@ const Profile = () => {
                     </div>
                 </button>
                 <div
-                    className={`absolute top-11 right-0 z-30 w-[350px] flex flex-col py-4 bg-gray-50 rounded-md shadow-lg border border-white ${transClass}`}
+                    className={`absolute top-11 right-0 z-30 w-[350px] flex flex-col py-4 bg-gray-50 rounded-md shadow-md border border-white ${transClass}`}
                 >
                     <span
                         className="text-sm text-gray-600 px-4 pb-3 flex items-center"
@@ -38,14 +38,14 @@ const Profile = () => {
                         <span className="ml-1">{user?.userName}</span>
                     </span>
                     <span className="w-full border-b border-gray-200"></span>
-                    <Link
+                    {/* <Link
                         className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
                         href="/imgapp"
                         onClick={toggle}
                     >
                         <IoImage color="#6d6a6a" size={20} />
                         <span className="ml-1">Wallpaper</span>
-                    </Link>
+                    </Link> */}
                     <button
                         className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
                         onClick={signOut}

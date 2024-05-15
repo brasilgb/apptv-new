@@ -7,9 +7,9 @@ interface TitleProps {
 
 const TitleSection = (props: TitleProps) => {
   return (
-    <div className="bg-white shadow-lg rounded-t-md p-1">
+    <div className="bg-white shadow-md rounded-t-md p-1">
       <h1
-        className={`${props.fsize ? props.fsize : 'text-sm'} text-center  drop-shadow-lg font-bold text-gray-500 uppercase`}
+        className={`${props.fsize ? props.fsize : 'text-sm'} text-center font-bold text-gray-500 uppercase`}
       >
         {props.title}
       </h1>
