@@ -1,5 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  reactStrictMode: true, 
+  images : { 
+    domains : ['api.gruposolar.com.br']
+  },
   basePath: '/apptv',
   assetPrefix: '/apptv',
   webpack(config, { isServer }) {

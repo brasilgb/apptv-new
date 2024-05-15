@@ -26,7 +26,7 @@ export async function getDataEvolucao() {
 
 export async function getDataBgImage() {
     const res = await fetch('http://api.gruposolar.com.br:8085/api/getbgimage', {
-        cache: 'no-store',
+        next: { revalidate: 10 },
     })
     if (!res.ok) {
         // This will activate the closest `error.js` Error Boundary
