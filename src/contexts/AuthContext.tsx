@@ -1,7 +1,8 @@
 "use client";
 import { getDataBgImage } from "@/lib/apitv";
+import { deleteCookie, getCookie, setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
-import React, { ReactNode, createContext, useCallback, useContext, useEffect, useState } from "react";
+import React, { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext({} as any);
 
@@ -65,14 +66,14 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   //         },
   //       ],
   //     };
-  //     localStorage.setItem('portal_user', JSON.stringify(userData));
+  //     setCookie('portal_access', JSON.stringify(userData));
   //   };
   //   setStorage();
   // }, []);
 
   useEffect(() => {
       const loadStorage = async () => {
-          const recoveredUser = localStorage.getItem('portal_user');
+          const recoveredUser = getCookie('portal_access');
           if (recoveredUser) {
               setUser(JSON.parse(recoveredUser));
           }
@@ -81,7 +82,7 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   const signOut = () => {
-    localStorage.removeItem('portal_user');
+    deleteCookie('portal_access');
     setUser(null);
     router.push('http://portal.gruposolar.com.br/login');
   }
