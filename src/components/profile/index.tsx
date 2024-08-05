@@ -2,7 +2,7 @@
 import { useAuthContext } from "@/contexts/AuthContext";
 import Link from "next/link";
 import { useState } from "react";
-import { IoExit, IoImage, IoPerson } from 'react-icons/io5';
+import { IoExit, IoImage, IoKey, IoPerson } from 'react-icons/io5';
 import { MdOutlineKeyboardArrowDown } from 'react-icons/md';
 
 const Profile = () => {
@@ -46,6 +46,14 @@ const Profile = () => {
                         <IoImage color="#6d6a6a" size={20} />
                         <span className="ml-1">Wallpaper</span>
                     </Link> */}
+                    <Link
+                        className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
+                        href={`https://portal.gruposolar.com.br/changepassword?firstAccess=false&code=${user?.userCode}`}
+                        onClick={() => setIsOpen(false)}
+                    >
+                        <IoKey color="#6d6a6a" size={20} />
+                        <span className="ml-1">Alterar minha senha</span>
+                    </Link>
                     <button
                         className="text-gray-600 hover:text-gray-400 px-4 pt-2 flex items-center"
                         onClick={signOut}
